@@ -59,7 +59,7 @@ A simple chat application built with React, Next.js, and Firebase Firestore.
 
 ## Demo
 
-Check out the live demo: [Chat App Demo](wip.com)
+Check out the live demo: [Chat App Demo](https://webchat-silk-two.vercel.app/)
 
 ## Contributing
 
