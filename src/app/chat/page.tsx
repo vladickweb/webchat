@@ -34,6 +34,7 @@ const ChatUI = () => {
 						value={newMessage}
 						onChange={(e) => setNewMessage(e.target.value)}
 						className='border p-2 flex-grow'
+						onKeyUp={(e) => e.key === 'Enter' && handleSendMessage()}
 					/>
 					<button
 						onClick={handleSendMessage}

@@ -30,6 +30,7 @@ const Home = () => {
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}
 					className='border p-2 w-full mb-4'
+					onKeyUp={(e) => e.key === 'Enter' && handleStartChat()}
 				/>
 				<button
 					onClick={handleStartChat}

@@ -11,14 +11,7 @@ const firebaseConfig = {
 	measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 }
 
-// console.log(firebaseConfig)
-
-console.log(1)
 const app = initializeApp(firebaseConfig)
-console.log(2, app)
 const db = getFirestore(app)
-console.log(3, db)
-
-// console.log(db, 'db')
 
 export { db }
