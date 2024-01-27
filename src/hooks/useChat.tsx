@@ -10,17 +10,11 @@ import {
 import useLocalStorage from './useLocalStorage'
 import { Message } from '../types/message'
 import { db } from '../../lib/firebase'
-import { useRouter } from 'next/navigation'
 
 export const useChat = () => {
-	const router = useRouter()
 	const [messages, setMessages] = useState<Message[]>([])
 	const [newMessage, setNewMessage] = useState('')
 	const [username] = useLocalStorage('username', '')
-
-	if (!username) {
-		router.push('/')
-	}
 
 	const messagesContainerRef = useRef(null)
 

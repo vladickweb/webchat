@@ -1,9 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useChat } from '../../hooks/useChat'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import { useRouter } from 'next/navigation'
 
 const ChatUI = () => {
+	const router = useRouter()
+	const [username] = useLocalStorage('username', '')
 	const {
 		messages,
 		newMessage,
@@ -11,6 +15,13 @@ const ChatUI = () => {
 		messagesContainerRef,
 		handleSendMessage
 	} = useChat()
+
+	// Redirect to homepage if username is not set.
+	useEffect(() => {
+		if (!username) {
+			router.push('/')
+		}
+	}, [username, router])
 
 	return (
 		<div className='flex flex-col items-center justify-center h-screen bg-gray-100'>
